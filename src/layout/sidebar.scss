@@ -1,0 +1,29 @@
+.sidebar {
+  border-right: 1px solid #1b1c1c;
+  width: 100%;
+  min-width: 250px;
+  max-width: 15%;
+  height: 100vh;
+
+  .logo {
+    font-family: "Lemon", serif;
+    padding: 8px 0 16px;
+    color: #ac1b1b;
+    font-size: 28px;
+
+    span {
+      font-family: "Lemon", serif;
+      color: white;
+    }
+  }
+
+  .menu-header {
+    font-size: 14px;
+    padding: 0 16px;
+    color: #555559;
+  }
+
+  .rt-Separator {
+    width: 100%;
+  }
+}

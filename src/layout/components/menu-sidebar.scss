@@ -1,0 +1,27 @@
+.menu-link {
+  text-decoration: none;
+
+  .menu-sidebar {
+    border: 2px solid transparent;
+    border-radius: 16px;
+    transition: all 0.1s linear;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    svg {
+      background-color: transparent;
+    }
+
+    &.active {
+      background-color: #ac1b1b;
+      border: 2px solid #df1010;
+    }
+
+    .menu-text {
+      background-color: transparent;
+    }
+  }
+}
