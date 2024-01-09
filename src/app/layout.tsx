@@ -4,6 +4,7 @@ import "@radix-ui/themes/styles.css";
 import { Flex, Theme } from "@radix-ui/themes";
 import Sidebar from "@/layout/sidebar";
 import Content from "@/layout/content";
+import Header from "@/layout/header";
 
 export const metadata: Metadata = {
   title: "The Lazy Movie DB",
@@ -34,7 +35,10 @@ export default function RootLayout({
         <Theme>
           <Flex direction="row">
             <Sidebar />
-            <Content>{children}</Content>
+            <Content>
+              <Header />
+              {children}
+            </Content>
           </Flex>
         </Theme>
       </body>
