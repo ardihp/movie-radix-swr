@@ -1,13 +1,16 @@
 "use client";
 
 import React from "react";
-import { Flex, Heading, Separator, Text } from "@radix-ui/themes";
+import { Box, Flex, Heading, Separator, Text } from "@radix-ui/themes";
 import MenuSidebar from "./components/menu-sidebar";
 import {
+  CameraIcon,
   CubeIcon,
   DesktopIcon,
   GlobeIcon,
   PersonIcon,
+  PieChartIcon,
+  ResumeIcon,
   RocketIcon,
 } from "@radix-ui/react-icons";
 import "./sidebar.scss";
@@ -18,9 +21,15 @@ export default function Sidebar() {
 
   return (
     <Flex direction="column" gap="3" p="4" className="sidebar">
-      <Heading m="3" className="logo">
-        <span>Thelazy.</span>DB
-      </Heading>
+      <Flex direction="row" align="center" gap="1" className="logo">
+        <Box mt="1" className="icon-logo">
+          <PieChartIcon width="40px" height="40px" />
+        </Box>
+
+        <Heading m="3">
+          <span>Thelazy</span>MDB
+        </Heading>
+      </Flex>
 
       <Flex direction="column" gap="3">
         <Text weight="bold" className="menu-header" mb="1">

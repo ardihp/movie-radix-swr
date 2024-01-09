@@ -6,14 +6,27 @@
   height: 100vh;
 
   .logo {
-    font-family: "Lemon", serif;
-    padding: 8px 0 16px;
-    color: #ac1b1b;
-    font-size: 28px;
+    padding: 8px 16px 16px;
+    color: white;
 
-    span {
+    .icon-logo {
+      svg {
+        padding: 8px;
+        background-color: #ac1b1b;
+        border: 2px solid #df1010;
+        border-radius: 12px;
+      }
+    }
+
+    .rt-Heading {
       font-family: "Lemon", serif;
-      color: white;
+      color: #df1010;
+      font-size: 18px;
+
+      span {
+        font-family: "Lemon", serif;
+        color: white;
+      }
     }
   }
 
