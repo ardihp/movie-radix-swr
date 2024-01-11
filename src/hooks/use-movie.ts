@@ -6,16 +6,16 @@ export default function useMovie() {
   const postFetcher = (url: string) => axios.post(url).then((res) => res.data);
   const putFetcher = (url: string) => axios.put(url).then((res) => res.data);
 
-  function getUpcomingMovie() {
+  function getNowPlayingMovie() {
     const { data, isLoading, error } = useSWR(
-      endpoints.movie.upcoming,
+      endpoints.movie.now_playing,
       getFetcher
     );
 
-    return { upcoming: data, isLoading, error };
+    return { now_playing: data, isLoading, error };
   }
 
   return {
-    getUpcomingMovie,
+    getNowPlayingMovie,
   };
 }

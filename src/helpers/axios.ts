@@ -18,6 +18,6 @@ export default axiosInstance;
 
 export const endpoints = {
   movie: {
-    upcoming: "/movie/now_playing",
+    now_playing: "/movie/now_playing",
   },
 };
