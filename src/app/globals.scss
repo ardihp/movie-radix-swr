@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Readex Pro", sans-serif;
+}
+
+body {
+  background-color: #100f12 !important;
+}
+
+$color-red: #ac1b1b;
+
+.btn-primary {
+  background-color: $color-red !important;
+  border: 2px solid #df1010 !important;
+  padding: 6px 10px;
+  width: fit-content;
+  cursor: pointer !important;
+}
