@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./globals.scss";
 import "@radix-ui/themes/styles.css";
 import { Flex, Theme } from "@radix-ui/themes";
 import Sidebar from "@/layout/sidebar";
@@ -26,7 +26,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Lemon&family=Poppins:wght@400;500;600&family=Readex+Pro:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Readex+Pro:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
       </head>
