@@ -1,6 +1,6 @@
-import { Text } from "@radix-ui/themes";
+import HomeView from "@/section/home/view";
 import React from "react";
 
-export default function Home() {
-  return <Text>ini home</Text>;
+export default function HomePage() {
+  return <HomeView />;
 }

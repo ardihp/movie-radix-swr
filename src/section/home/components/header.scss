@@ -1,0 +1,60 @@
+.header-home {
+  height: 500px;
+  border-top: 1px solid #1b1c1c;
+  border-bottom: 1px solid #1b1c1c;
+  position: relative;
+  overflow: hidden;
+
+  .movie-detail {
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(135deg, #000000d2, #0000008a, #ac1b1b96);
+    height: 100%;
+    width: 100%;
+    padding: 32px 38px 54px;
+    justify-content: space-between;
+    gap: 32px;
+
+    .badge {
+      background-color: #ac1b1b;
+      border: 1px solid #df1010;
+      padding: 6px 10px;
+      width: fit-content;
+      border-radius: 16px;
+      transition: all 0.1s linear;
+      font-size: 12px;
+      color: white;
+    }
+
+    .movie-title {
+      font-size: 36px;
+      color: white;
+      font-weight: bold;
+      max-width: 370px;
+      line-height: 1.3em;
+    }
+
+    .movie-description {
+      font-size: 14px;
+      color: white;
+      max-width: 450px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    .movie-rate {
+      margin-top: 4px;
+      gap: 8px;
+
+      .rt-Text {
+        color: white;
+      }
+
+      svg {
+        color: #e2ab15;
+      }
+    }
+  }
+}
