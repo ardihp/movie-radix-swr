@@ -1,7 +1,47 @@
 .header {
-  padding: 8px 16px 16px;
+  padding: 24px 38px 28px;
 
   .wrapper-header {
     height: 54px;
+
+    .search-input {
+      padding: 6px 12px;
+      gap: 8px;
+      border: 1px solid #242423;
+      border-radius: 12px;
+
+      svg {
+        color: white;
+      }
+
+      input {
+        color: white;
+
+        &::placeholder {
+          color: #434246;
+        }
+      }
+
+      .rt-TextFieldChrome {
+        outline: none !important;
+        border: none !important;
+        background-color: transparent;
+      }
+    }
+
+    .wrapper-user-login {
+      padding: 6px 12px;
+      gap: 8px;
+      border: 1px solid #242423;
+      background-color: transparent;
+      border-radius: 12px;
+      height: 46px;
+      width: 46px;
+      cursor: pointer;
+
+      svg {
+        color: white;
+      }
+    }
   }
 }
