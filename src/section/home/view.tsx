@@ -6,6 +6,7 @@ import HeaderHome from "./components/header";
 import useMovie from "@/hooks/use-movie";
 import { MovieDetail } from "@/types/movie";
 import Loader from "@/layout/loader";
+import ContentList from "./components/content-list";
 
 export default function HomeView() {
   const { getNowPlayingMovie } = useMovie();
@@ -35,6 +36,8 @@ export default function HomeView() {
   ) : (
     <Flex direction="column">
       <HeaderHome randomMovie={randomMovie} />
+
+      <ContentList />
     </Flex>
   );
 }
