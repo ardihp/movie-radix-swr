@@ -6,16 +6,28 @@
   font-family: "Readex Pro", sans-serif;
 }
 
+$color-red: #ac1b1b;
+$color-grey: #100f12;
+
 body {
-  background-color: #100f12 !important;
+  background-color: $color-grey !important;
 }
 
-$color-red: #ac1b1b;
-
-.btn-primary {
-  background-color: $color-red !important;
-  border: 2px solid #df1010 !important;
+@mixin btn {
   padding: 6px 10px;
   width: fit-content;
   cursor: pointer !important;
+}
+
+.btn-primary {
+  @include btn;
+  background-color: $color-red !important;
+  border: 2px solid #df1010 !important;
+}
+
+.btn-default {
+  @include btn;
+  background-color: #72717454 !important;
+  border: 2px solid #696969 !important;
+  backdrop-filter: blur(3px)
 }

@@ -3,7 +3,14 @@ import React from "react";
 import "./header.scss";
 import { MovieDetail } from "@/types/movie";
 import { HOST_DOMAIN_ASSETS } from "@/config-global";
-import { IconStar, IconStarFilled, IconUniverse } from "@tabler/icons-react";
+import {
+  IconInfoCircleFilled,
+  IconPlayerPlay,
+  IconPlayerPlayFilled,
+  IconStar,
+  IconStarFilled,
+  IconUniverse,
+} from "@tabler/icons-react";
 
 interface HeaderHomeProps {
   randomMovie: MovieDetail;
@@ -17,18 +24,18 @@ export default function HeaderHome({ randomMovie }: HeaderHomeProps) {
         style={{
           height: "100%",
           width: "100%",
-          objectPosition: "center",
+          objectPosition: "top",
           objectFit: "cover",
           zIndex: 0,
         }}
       />
-      <Flex direction="column" className="movie-detail" height="100%">
+      <Flex direction="column" className="section-movie" height="100%">
         <Flex direction="row" align="center" gap="2" className="badge">
           <IconUniverse width="16px" height="16px" />
           <Text>Now Playing</Text>
         </Flex>
 
-        <Flex direction="column" gap="3">
+        <Flex direction="column" gap="4" className="movie-detail">
           <Text className="movie-title">{randomMovie.title}</Text>
           <Text className="movie-description">{randomMovie.overview}</Text>
 
@@ -38,17 +45,37 @@ export default function HeaderHome({ randomMovie }: HeaderHomeProps) {
           </Flex>
         </Flex>
 
-        <Button
-          className="btn-primary"
-          style={{
-            width: 130,
-            height: 60,
-            fontSize: 16,
-            borderRadius: 16,
-          }}
-        >
-          Watch
-        </Button>
+        <Flex direction="row" gap="2">
+          <Button
+            className="btn-primary"
+            style={{
+              width: 125,
+              height: 55,
+              fontSize: 16,
+              borderRadius: 16,
+            }}
+          >
+            <Flex direction="row" align="center" gap="2">
+              <IconPlayerPlayFilled height="16px" width="16px" />
+              <Text>Watch</Text>
+            </Flex>
+          </Button>
+
+          <Button
+            className="btn-default"
+            style={{
+              width: 165,
+              height: 55,
+              fontSize: 16,
+              borderRadius: 16,
+            }}
+          >
+            <Flex direction="row" align="center" gap="2">
+              <IconInfoCircleFilled height="16px" width="16px" />
+              <Text>More Detail</Text>
+            </Flex>
+          </Button>
+        </Flex>
       </Flex>
     </Flex>
   );
