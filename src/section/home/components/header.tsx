@@ -5,12 +5,11 @@ import { MovieDetail } from "@/types/movie";
 import { HOST_DOMAIN_ASSETS } from "@/config-global";
 import {
   IconInfoCircleFilled,
-  IconPlayerPlay,
   IconPlayerPlayFilled,
-  IconStar,
   IconStarFilled,
   IconUniverse,
 } from "@tabler/icons-react";
+import Image from "next/image";
 
 interface HeaderHomeProps {
   randomMovie: MovieDetail;
@@ -19,8 +18,9 @@ interface HeaderHomeProps {
 export default function HeaderHome({ randomMovie }: HeaderHomeProps) {
   return (
     <Flex direction="column" className="header-home">
-      <img
+      <Image
         src={HOST_DOMAIN_ASSETS + randomMovie.backdrop_path}
+        fill
         style={{
           height: "100%",
           width: "100%",
@@ -28,6 +28,10 @@ export default function HeaderHome({ randomMovie }: HeaderHomeProps) {
           objectFit: "cover",
           zIndex: 0,
         }}
+        placeholder="blur"
+        blurDataURL={HOST_DOMAIN_ASSETS + randomMovie.backdrop_path}
+        priority
+        alt={randomMovie.title}
       />
       <Flex direction="column" className="section-movie" height="100%">
         <Flex direction="row" align="center" gap="2" className="badge">
