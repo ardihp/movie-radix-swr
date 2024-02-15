@@ -15,7 +15,37 @@ export default function useMovie() {
     return { now_playing: data, isLoading, error };
   }
 
+  function getPopularMovie() {
+    const { data, isLoading, error } = useSWR(
+      endpoints.movie.popular,
+      getFetcher
+    );
+
+    return { popular: data, isLoading, error };
+  }
+
+  function getTopRatedMovie() {
+    const { data, isLoading, error } = useSWR(
+      endpoints.movie.top_rated,
+      getFetcher
+    );
+
+    return { top_rated: data, isLoading, error };
+  }
+
+  function getUpcomingMovie() {
+    const { data, isLoading, error } = useSWR(
+      endpoints.movie.upcoming,
+      getFetcher
+    );
+
+    return { upcoming: data, isLoading, error };
+  }
+
   return {
     getNowPlayingMovie,
+    getPopularMovie,
+    getTopRatedMovie,
+    getUpcomingMovie,
   };
 }
