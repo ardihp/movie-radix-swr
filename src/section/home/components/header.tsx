@@ -20,17 +20,11 @@ export default function HeaderHome({ randomMovie }: HeaderHomeProps) {
     <Flex direction="column" className="header-home">
       <Image
         src={HOST_DOMAIN_ASSETS + randomMovie.backdrop_path}
-        fill
-        style={{
-          height: "100%",
-          width: "100%",
-          objectPosition: "top",
-          objectFit: "cover",
-          zIndex: 0,
-        }}
+        className="header-image"
         placeholder="blur"
         blurDataURL={HOST_DOMAIN_ASSETS + randomMovie.backdrop_path}
         priority
+        fill
         alt={randomMovie.title}
       />
       <Flex direction="column" className="section-movie" height="100%">

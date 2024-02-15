@@ -1,20 +1,50 @@
-'use client'
+"use client";
 
-import { Flex, Text } from "@radix-ui/themes";
 import React from "react";
-import "./content-list.scss";
+import { Flex } from "@radix-ui/themes";
 import dynamic from "next/dynamic";
+import "./content-list.scss";
+import useMovie from "@/hooks/use-movie";
+
 const ListMovie = dynamic(() => import("./list-movie"), {
   loading: () => <p>"loading..."</p>,
 });
 
 export default function ContentList() {
+  const {
+    getNowPlayingMovie,
+    getPopularMovie,
+    getTopRatedMovie,
+    getUpcomingMovie,
+  } = useMovie();
+
+  const { now_playing, isLoading: loadingNowPlaying } = getNowPlayingMovie();
+  const { popular, isLoading: loadingPopular } = getPopularMovie();
+  const { top_rated, isLoading: loadingTopRated } = getTopRatedMovie();
+  const { upcoming, isLoading: loadingUpcoming } = getUpcomingMovie();
+
   return (
     <Flex direction="column" className="content-list">
-      <ListMovie title="Now Playing" />
-      <ListMovie title="Popular" />
-      <ListMovie title="Top Rated" />
-      <ListMovie title="Upcoming" />
+      <ListMovie
+        title="Now Playing"
+        isLoading={loadingNowPlaying}
+        data={now_playing?.results}
+      />
+      <ListMovie
+        title="Popular"
+        isLoading={loadingPopular}
+        data={popular?.results}
+      />
+      <ListMovie
+        title="Top Rated"
+        isLoading={loadingTopRated}
+        data={top_rated?.results}
+      />
+      <ListMovie
+        title="Upcoming"
+        isLoading={loadingUpcoming}
+        data={upcoming?.results}
+      />
     </Flex>
   );
 }

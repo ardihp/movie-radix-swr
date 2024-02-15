@@ -1,10 +1,49 @@
 .list-movie {
   gap: 16px;
-  height: 500px;
+  height: 375px;
 
   .top-text {
     color: white;
     font-weight: bold;
     font-size: 20px;
+  }
+
+  .section-list {
+    height: 100%;
+    overflow: auto;
+    gap: 24px;
+
+    .item-list {
+      width: 180px;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      gap: 12px;
+      cursor: pointer;
+
+      .movie-image {
+        height: auto !important;
+        min-height: 270px;
+        max-height: 270px;
+        border-radius: 16px;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+        position: relative !important;
+      }
+
+      .movie-detail {
+        z-index: 1;
+
+        .title-ori {
+          color: white;
+        }
+
+        .title {
+          font-size: 14px;
+          color: #555559;
+        }
+      }
+    }
   }
 }

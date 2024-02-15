@@ -5,6 +5,14 @@
   position: relative;
   overflow: hidden;
 
+  .header-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    z-index: 0;
+  }
+
   .section-movie {
     position: absolute;
     z-index: 1;
