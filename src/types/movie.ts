@@ -1,6 +1,7 @@
 export interface MovieDetail {
   id: number;
   title: string;
+  original_title?: string;
   adult: boolean;
   backdrop_path: string;
   poster_path: string;
