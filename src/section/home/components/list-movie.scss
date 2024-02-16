@@ -11,14 +11,41 @@
   .section-list {
     height: 100%;
     overflow: auto;
-    gap: 24px;
+
+    /* no circle */
+    .flickity-button {
+      background: transparent;
+    }
+    /* big previous & next buttons */
+    .flickity-prev-next-button {
+      width: 100px;
+      height: 100px;
+    }
+    /* icon color */
+    .flickity-button-icon {
+      fill: white;
+    }
+    /* hide disabled button */
+    .flickity-button:disabled {
+      display: none;
+    }
+
+    .flickity-viewport {
+      height: 100% !important;
+    }
+
+    .flickity-slider {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+    }
 
     .item-list {
-      width: 180px;
-      height: 100%;
+      width: 204px;
+      height: fit-content;
       overflow: hidden;
-      position: relative;
       gap: 12px;
+      padding: 0 12px;
       cursor: pointer;
 
       .movie-image {
@@ -37,6 +64,9 @@
 
         .title-ori {
           color: white;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
         }
 
         .title {

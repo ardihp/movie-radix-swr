@@ -6,9 +6,7 @@ import dynamic from "next/dynamic";
 import "./content-list.scss";
 import useMovie from "@/hooks/use-movie";
 
-const ListMovie = dynamic(() => import("./list-movie"), {
-  loading: () => <p>"loading..."</p>,
-});
+const ListMovie = dynamic(() => import("./list-movie"));
 
 export default function ContentList() {
   const {
@@ -30,21 +28,21 @@ export default function ContentList() {
         isLoading={loadingNowPlaying}
         data={now_playing?.results}
       />
-      <ListMovie
+      {/* <ListMovie
         title="Popular"
         isLoading={loadingPopular}
         data={popular?.results}
-      />
-      <ListMovie
+      /> */}
+      {/* <ListMovie
         title="Top Rated"
         isLoading={loadingTopRated}
         data={top_rated?.results}
-      />
-      <ListMovie
+      /> */}
+      {/* <ListMovie
         title="Upcoming"
         isLoading={loadingUpcoming}
         data={upcoming?.results}
-      />
+      /> */}
     </Flex>
   );
 }
