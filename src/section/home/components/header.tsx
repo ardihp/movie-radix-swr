@@ -21,8 +21,6 @@ export default function HeaderHome({ randomMovie }: HeaderHomeProps) {
       <Image
         src={HOST_DOMAIN_ASSETS + randomMovie.backdrop_path}
         className="header-image"
-        placeholder="blur"
-        blurDataURL={HOST_DOMAIN_ASSETS + randomMovie.backdrop_path}
         priority
         fill
         alt={randomMovie.title}
