@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Flex, Text } from "@radix-ui/themes";
-import "./content.css";
+import "./content.scss";
 
 export default function Content({ children }: React.PropsWithChildren) {
   return (

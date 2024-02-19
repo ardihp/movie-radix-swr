@@ -33,7 +33,7 @@ export default function RootLayout({
 
       <body>
         <Theme>
-          <Flex direction="row">
+          <Flex direction="row" style={{ minHeight: "100vh" }}>
             <Sidebar />
             <Content>
               <Header />
