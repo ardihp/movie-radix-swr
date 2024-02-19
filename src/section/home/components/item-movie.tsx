@@ -8,9 +8,9 @@ interface ItemMovieProps {
   item: MovieDetail;
 }
 
-export default function ItemMovie({ item, ...rest }: ItemMovieProps) {
+export default function ItemMovie({ item }: ItemMovieProps) {
   return (
-    <Flex direction="column" className="item-list" {...rest}>
+    <Flex direction="column" className="item-list">
       <Image
         src={HOST_DOMAIN_ASSETS + item.poster_path}
         className="movie-image"
@@ -18,7 +18,6 @@ export default function ItemMovie({ item, ...rest }: ItemMovieProps) {
         sizes="100%"
         alt={item.title}
         loading="lazy"
-        data-flickity-lazyload={HOST_DOMAIN_ASSETS + item.poster_path}
       />
 
       <Flex direction="column" className="movie-detail">

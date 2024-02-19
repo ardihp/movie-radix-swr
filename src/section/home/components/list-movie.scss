@@ -1,6 +1,6 @@
 .list-movie {
   gap: 18px;
-  height: 375px;
+  height: fit-content;
 
   .top-text {
     color: white;
@@ -8,43 +8,23 @@
     font-size: 20px;
   }
 
-  .custom-button-flickity {
-    background-color: transparent;
-    cursor: pointer;
-    border-radius: 100%;
-    position: relative !important;
-
-    &:disabled {
-      opacity: 0.3;
-    }
-
-    &:hover {
-      background-color: rgba(85, 85, 89, 0.1);
-    }
-    &:focus {
-      box-shadow: none;
-    }
-  }
-
   .section-list {
     height: 100%;
-    overflow: auto;
+    align-items: center;
+    position: relative;
 
-    .flickity-viewport {
-      height: 100% !important;
-    }
-
-    .flickity-slider {
+    .slick-slide {
       display: flex;
-      flex-direction: row;
-      gap: 24px;
+      flex-direction: column;
+      align-items: center;
     }
 
     .item-list {
-      width: 204px;
+      width: 180px;
       height: fit-content;
       gap: 12px;
       cursor: pointer;
+      overflow: hidden;
 
       &.loading {
         .movie-image {
@@ -65,20 +45,12 @@
         object-position: center;
         z-index: 0;
         position: relative !important;
-        transition: opacity 0.4s;
-        opacity: 0;
-
-        &.flickity-lazyloaded,
-        &.flickity-lazyerror {
-          opacity: 1;
-        }
       }
 
       .movie-detail {
         z-index: 1;
 
         .title {
-          max-width: 180px;
           font-size: 14px;
           color: #555559;
           white-space: nowrap;
@@ -103,6 +75,44 @@
             }
           }
         }
+      }
+    }
+
+    &:hover {
+      .custom-button-flickity {
+        opacity: 1;
+        background-color: rgba(16, 15, 18, 0.3);
+      }
+    }
+
+    .custom-button-flickity {
+      background-color: transparent;
+      cursor: pointer;
+      border-radius: 4px;
+      position: absolute;
+      height: 100%;
+      width: 40px;
+      z-index: 2;
+      opacity: 0;
+
+      &.prev {
+        left: 0;
+      }
+
+      &.next {
+        right: 0;
+      }
+
+      &:disabled {
+        opacity: 0.3;
+      }
+
+      &:hover {
+        background-color: rgba(16, 15, 18, 0.7);
+      }
+
+      &:focus {
+        box-shadow: none;
       }
     }
   }

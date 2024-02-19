@@ -45,15 +45,25 @@ export default function HeaderHome({ randomMovie }: HeaderHomeProps) {
           <Button
             className="btn-primary"
             style={{
-              width: 125,
+              width: 175,
               height: 55,
               fontSize: 16,
               borderRadius: 16,
             }}
           >
             <Flex direction="row" align="center" gap="2">
-              <IconPlayerPlayFilled height="16px" width="16px" />
-              <Text>Watch</Text>
+              <Flex
+                align="center"
+                justify="center"
+                style={{
+                  border: "1px solid white",
+                  borderRadius: "100%",
+                  padding: 3,
+                }}
+              >
+                <IconPlayerPlayFilled height="10px" width="10px" />
+              </Flex>
+              <Text>Watch Trailer</Text>
             </Flex>
           </Button>
 
