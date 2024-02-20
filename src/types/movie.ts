@@ -9,4 +9,6 @@ export interface MovieDetail {
   release_date: string;
   overview: string;
   vote_average: number;
+  vote_count?: number;
+  popularity?: number;
 }
