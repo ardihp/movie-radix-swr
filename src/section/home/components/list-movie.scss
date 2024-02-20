@@ -25,6 +25,7 @@
       gap: 12px;
       cursor: pointer;
       overflow: hidden;
+      position: relative;
 
       &.loading {
         .movie-image {
