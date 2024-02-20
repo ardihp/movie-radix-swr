@@ -44,8 +44,8 @@ export default function Sidebar() {
         />
         <MenuSidebar
           icon={<RocketIcon width="20px" height="20px" />}
-          active={pathname.includes("movies")}
-          href="/movies"
+          active={pathname.includes("movie-list")}
+          href="/movie-list"
           text="Movies"
         />
         <MenuSidebar
@@ -53,18 +53,6 @@ export default function Sidebar() {
           active={pathname.includes("tv-show")}
           href="/tv-show"
           text="TV Show"
-        />
-        <MenuSidebar
-          icon={<PersonIcon width="20px" height="20px" />}
-          active={pathname.includes("people")}
-          href="/people"
-          text="People"
-        />
-        <MenuSidebar
-          icon={<CubeIcon width="20px" height="20px" />}
-          active={pathname.includes("genre")}
-          href="/genre"
-          text="Genre"
         />
       </Flex>
 
