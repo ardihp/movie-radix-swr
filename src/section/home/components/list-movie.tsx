@@ -34,40 +34,49 @@ const settings = {
       breakpoint: 1560,
       settings: {
         slidesToShow: 5,
+        centerPadding: "30px",
       },
     },
     {
       breakpoint: 1360,
       settings: {
         slidesToShow: 4,
+        centerPadding: "70px",
       },
     },
     {
       breakpoint: 1200,
       settings: {
+        slidesToShow: 5,
+        centerPadding: "30px",
+      },
+    },
+    {
+      breakpoint: 1100,
+      settings: {
         slidesToShow: 4,
-        centerPadding: "70px",
+        centerPadding: "60px",
       },
     },
     {
       breakpoint: 991,
       settings: {
         slidesToShow: 3,
-        centerPadding: "80px",
+        centerPadding: "120px",
       },
     },
     {
-      breakpoint: 840,
+      breakpoint: 896,
       settings: {
         slidesToShow: 3,
-        centerPadding: "25px",
+        centerPadding: "40px",
       },
     },
     {
-      breakpoint: 720,
+      breakpoint: 740,
       settings: {
         slidesToShow: 2,
-        centerPadding: "85px",
+        centerPadding: "40px",
       },
     },
   ],
@@ -101,9 +110,7 @@ export default function ListMovie({ title, isLoading, data }: ListMovieProps) {
                 </Flex>
               ))
             ) : data?.length >= 1 ? (
-              data
-                ?.filter((item, key) => key < 10)
-                ?.map((item, key) => <ItemMovie key={key} item={item} />)
+              data?.map((item, key) => <ItemMovie key={key} item={item} />)
             ) : (
               <Text>Tidak ada data</Text>
             )}
