@@ -41,7 +41,7 @@ export default function HeaderHome({ randomMovie }: HeaderHomeProps) {
           </Flex>
         </Flex>
 
-        <Flex direction="row" gap="2">
+        <Flex direction="row" gap="4">
           <Button
             className="btn-primary"
             style={{
