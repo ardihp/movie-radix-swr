@@ -29,5 +29,62 @@ body {
   @include btn;
   background-color: #72717454 !important;
   border: 2px solid #696969 !important;
-  backdrop-filter: blur(3px)
+  backdrop-filter: blur(3px);
+}
+
+.content-404 {
+  flex-direction: column;
+  gap: 42px;
+  align-items: center;
+  justify-content: center !important;
+  height: 100%;
+  width: 100%;
+
+  .text {
+    font-size: 64px;
+    color: #555559;
+    text-align: center;
+    line-height: 1.4em;
+  }
+
+  .btn-default {
+    width: 130px;
+    height: 45px;
+    border-radius: 8px;
+    border-width: 0 !important;
+
+    &:focus {
+      border-width: 2px !important;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    gap: 48px;
+
+    .text {
+      font-size: 56px;
+    }
+  }
+
+  @media screen and (max-width: 740px) {
+    gap: 32px;
+
+    .text {
+      font-size: 36px;
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    gap: 24px;
+
+    .text {
+      font-size: 28px;
+    }
+
+    .btn-default {
+      width: 120px;
+      height: 40px;
+      font-size: 12px;
+    }
+  }
 }
