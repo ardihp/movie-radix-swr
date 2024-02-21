@@ -4,9 +4,7 @@ import React from "react";
 import { Flex } from "@radix-ui/themes";
 import "./content-list.scss";
 import useMovie from "@/hooks/use-movie";
-import dynamic from "next/dynamic";
-
-const ListMovie = dynamic(() => import("./list-movie"));
+import ListMovie from "./list-movie";
 
 export default function ContentList() {
   const {

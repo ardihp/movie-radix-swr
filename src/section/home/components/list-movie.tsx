@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "./list-movie.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useInView } from "react-intersection-observer";
 
 interface ListMovieProps {
   title: string;
@@ -85,14 +86,23 @@ const settings = {
 export default function ListMovie({ title, isLoading, data }: ListMovieProps) {
   const [sliderRef, setSliderRef] = useState<any>(null);
 
+  const { ref, inView } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+
   return (
-    <Flex direction="column" className="list-movie" id={title}>
+    <Flex direction="column" className="list-movie" id={title} ref={ref}>
       <Flex direction="row" align="center" justify="between">
         <Text className="top-text">{title}</Text>
       </Flex>
 
-      <Flex direction="column" className="section-list">
-        <div style={{ maxWidth: "100%", height: "100%" }}>
+      <Flex
+        direction="column"
+        className="section-list"
+        style={{ display: inView ? "flex" : "none" }}
+      >
+        <div style={{ maxWidth: "100%", width: "100%", height: "100%" }}>
           <Slider ref={(slider: any) => setSliderRef(slider)} {...settings}>
             {isLoading ? (
               [...Array(10)]?.map((item, key) => (
