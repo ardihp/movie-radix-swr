@@ -97,11 +97,7 @@ export default function ListMovie({ title, isLoading, data }: ListMovieProps) {
         <Text className="top-text">{title}</Text>
       </Flex>
 
-      <Flex
-        direction="column"
-        className="section-list"
-        style={{ display: inView ? "flex" : "none" }}
-      >
+      <Flex direction="column" className="section-list">
         <div style={{ maxWidth: "100%", width: "100%", height: "100%" }}>
           <Slider ref={(slider: any) => setSliderRef(slider)} {...settings}>
             {isLoading ? (
@@ -120,7 +116,13 @@ export default function ListMovie({ title, isLoading, data }: ListMovieProps) {
                 </Flex>
               ))
             ) : data?.length >= 1 ? (
-              data?.map((item, key) => <ItemMovie key={key} item={item} />)
+              data?.map((item, key) => (
+                <ItemMovie
+                  key={key}
+                  item={item}
+                  viewStyle={{ display: inView ? "flex" : "none" }}
+                />
+              ))
             ) : (
               <Text>Tidak ada data</Text>
             )}

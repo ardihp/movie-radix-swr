@@ -11,16 +11,17 @@ import Link from "next/link";
 
 interface ItemMovieProps {
   item: MovieDetail;
+  viewStyle?: object;
 }
 
-export default function ItemMovie({ item }: ItemMovieProps) {
+export default function ItemMovie({ item, viewStyle }: ItemMovieProps) {
   const idr = Intl.NumberFormat(["id"]);
 
   return (
     <HoverCard.Root openDelay={150} closeDelay={0}>
       <HoverCard.Trigger asChild>
         <Link href={`/movie/detail/${item.id}`}>
-          <Flex direction="column" className="item-list">
+          <Flex direction="column" className="item-list" style={viewStyle}>
             <Image
               src={HOST_DOMAIN_ASSETS + item.poster_path}
               className="movie-image"
