@@ -30,7 +30,6 @@
       &.loading {
         .movie-image {
           width: 180px !important;
-          background-color: #555559;
           animation: blink 1.3s infinite ease-in-out;
           position: relative !important;
         }
@@ -46,6 +45,7 @@
         object-position: center;
         z-index: 0;
         position: relative !important;
+        animation: blink 1.7s infinite ease-in-out;
       }
 
       .movie-detail {
@@ -87,12 +87,11 @@
     }
 
     .custom-button-flickity {
-      background-color: transparent;
       cursor: pointer;
       border-radius: 4px;
       position: absolute;
       height: 100%;
-      width: 40px;
+      width: 24px;
       z-index: 2;
       opacity: 0;
 
@@ -109,7 +108,7 @@
       }
 
       &:hover {
-        background-color: rgba(16, 15, 18, 0.7);
+        background-color: rgba(16, 15, 18, 0.8);
       }
 
       &:focus {
@@ -121,12 +120,15 @@
 
 @keyframes blink {
   0% {
-    opacity: 0.2;
+    // opacity: 0.2;
+    background-color: rgba(85, 85, 89, 0.15);
   }
   50% {
-    opacity: 0.3;
+    // opacity: 0.3;
+    background-color: rgba(85, 85, 89, 0.25);
   }
   100% {
-    opacity: 0.2;
+    // opacity: 0.2;
+    background-color: rgba(85, 85, 89, 0.15);
   }
 }
