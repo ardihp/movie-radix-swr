@@ -10,6 +10,7 @@ import {
   IconUniverse,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface HeaderHomeProps {
   randomMovie: MovieDetail;
@@ -67,20 +68,22 @@ export default function HeaderHome({ randomMovie }: HeaderHomeProps) {
             </Flex>
           </Button>
 
-          <Button
-            className="btn-default"
-            style={{
-              width: 165,
-              height: 55,
-              fontSize: 16,
-              borderRadius: 16,
-            }}
-          >
-            <Flex direction="row" align="center" gap="2">
-              <IconInfoCircleFilled height="16px" width="16px" />
-              <Text>More Detail</Text>
-            </Flex>
-          </Button>
+          <Link href={`/movie/detail/${randomMovie.id}`}>
+            <Button
+              className="btn-default"
+              style={{
+                width: 165,
+                height: 55,
+                fontSize: 16,
+                borderRadius: 16,
+              }}
+            >
+              <Flex direction="row" align="center" gap="2">
+                <IconInfoCircleFilled height="16px" width="16px" />
+                <Text>More Detail</Text>
+              </Flex>
+            </Button>
+          </Link>
         </Flex>
       </Flex>
     </Flex>
