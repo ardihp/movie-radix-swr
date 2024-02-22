@@ -22,5 +22,6 @@ export const endpoints = {
     popular: "/movie/popular",
     top_rated: "/movie/top_rated",
     upcoming: "/movie/upcoming",
+    trending: "/trending/movie/day",
   },
 };

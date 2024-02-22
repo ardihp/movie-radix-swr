@@ -42,10 +42,20 @@ export default function useMovie() {
     return { upcoming: data, isLoading, error };
   }
 
+  function getTrendingMovies(params?: string) {
+    const { data, isLoading, error } = useSWR(
+      endpoints.movie.trending + (params || ""),
+      getFetcher
+    );
+
+    return { trendingMovies: data, isLoading, error };
+  }
+
   return {
     getNowPlayingMovie,
     getPopularMovie,
     getTopRatedMovie,
     getUpcomingMovie,
+    getTrendingMovies,
   };
 }
