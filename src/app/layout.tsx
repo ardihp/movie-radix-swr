@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.scss";
-import "@radix-ui/themes/styles.css";
-import { Flex, Theme } from "@radix-ui/themes";
+import { Box, Theme } from "@radix-ui/themes";
 import Sidebar from "@/layout/sidebar";
 import Content from "@/layout/content";
 import Header from "@/layout/header";
+import "./globals.scss";
+import "@radix-ui/themes/styles.css";
 
 export const metadata: Metadata = {
   title: "The Lazy Movie DB",
@@ -33,13 +33,11 @@ export default function RootLayout({
 
       <body>
         <Theme>
-          <Flex direction="row" style={{ minHeight: "100vh" }}>
+          <Box className="layout-wrapper">
+            <Header />
             <Sidebar />
-            <Content>
-              <Header />
-              {children}
-            </Content>
-          </Flex>
+            <Content>{children}</Content>
+          </Box>
         </Theme>
       </body>
     </html>

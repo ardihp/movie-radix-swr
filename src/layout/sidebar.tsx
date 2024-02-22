@@ -20,7 +20,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <Flex direction="column" gap="3" p="4" className="sidebar">
+    <aside className="sidebar">
       <Flex direction="row" align="center" gap="1" className="logo">
         <Box mt="1" className="icon-logo">
           <PieChartIcon width="40px" height="40px" />
@@ -55,8 +55,6 @@ export default function Sidebar() {
           text="TV Show"
         />
       </Flex>
-
-      <Separator />
-    </Flex>
+    </aside>
   );
 }

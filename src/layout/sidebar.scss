@@ -1,21 +1,14 @@
 .sidebar {
+  grid-area: aside;
   border-right: 1px solid #1b1c1c;
   width: 100%;
-  min-width: 200px;
   height: 100vh;
   position: sticky;
   top: 0;
+  padding: 14px;
 
   @media screen and (max-width: 1200px) {
     display: none;
-  }
-
-  @media screen and (min-width: 1200px) {
-    max-width: 20%;
-  }
-
-  @media screen and (min-width: 1560px) {
-    max-width: 15%;
   }
 
   .logo {

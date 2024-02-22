@@ -7,7 +7,7 @@ import "./header.scss";
 
 export default function Header() {
   return (
-    <Flex direction="column" gap="3" className="header">
+    <header className="header">
       <Flex
         direction="row"
         align="center"
@@ -23,6 +23,6 @@ export default function Header() {
           <PersonIcon height="16px" width="16px" />
         </IconButton>
       </Flex>
-    </Flex>
+    </header>
   );
 }

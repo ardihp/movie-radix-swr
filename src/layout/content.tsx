@@ -8,9 +8,7 @@ import "./content.scss";
 export default function Content({ children }: React.PropsWithChildren) {
   return (
     <SWRConfig value={{ provider: () => new Map() }}>
-      <Flex direction="column" className="content">
-        {children}
-      </Flex>
+      <main className="content">{children}</main>
     </SWRConfig>
   );
 }

@@ -32,6 +32,21 @@ body {
   backdrop-filter: blur(3px);
 }
 
+.layout-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 255px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "aside header" "aside main";
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "header" "main";
+  }
+}
+
 .content-404 {
   flex-direction: column;
   gap: 42px;

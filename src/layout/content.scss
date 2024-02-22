@@ -1,11 +1,11 @@
 .content {
-  width: 100%;
+  grid-area: main;
 
-  @media screen and (min-width: 1200px) {
-    max-width: 80%;
-  }
+  // @media screen and (min-width: 1200px) {
+  //   max-width: 80%;
+  // }
 
-  @media screen and (min-width: 1560px) {
-    max-width: 85%;
-  }
+  // @media screen and (min-width: 1560px) {
+  //   max-width: 85%;
+  // }
 }
