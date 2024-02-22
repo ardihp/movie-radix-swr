@@ -1,0 +1,38 @@
+.grid-movie {
+  columns: 5;
+  column-gap: 24px;
+
+  padding: 0 38px 28px;
+
+  .content-item {
+    margin-bottom: 36px;
+    break-inside: avoid;
+
+    &.long-1 {
+      .item-list {
+        .movie-image {
+          min-height: 290px !important;
+          max-height: 290px !important;
+        }
+      }
+    }
+
+    &.long-2 {
+      .item-list {
+        .movie-image {
+          min-height: 250px !important;
+          max-height: 250px !important;
+        }
+      }
+    }
+
+    &.long-3 {
+      .item-list {
+        .movie-image {
+          min-height: 270px !important;
+          max-height: 270px !important;
+        }
+      }
+    }
+  }
+}

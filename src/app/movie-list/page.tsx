@@ -1,6 +1,6 @@
-import { Text } from "@radix-ui/themes";
 import React from "react";
+import MovieListView from "@/section/movie-list/view";
 
-export default function Movies() {
-  return <Text>ini movies</Text>;
+export default function MovieListPage() {
+  return <MovieListView />;
 }

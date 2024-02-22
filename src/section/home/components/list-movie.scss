@@ -20,66 +20,6 @@
       align-items: center;
     }
 
-    .item-list {
-      width: 180px;
-      height: fit-content;
-      gap: 12px;
-      cursor: pointer;
-      overflow: hidden;
-      position: relative;
-
-      &.loading {
-        .movie-image {
-          width: 180px !important;
-          animation: blink 1.3s infinite ease-in-out;
-          position: relative !important;
-        }
-      }
-
-      .movie-image {
-        height: auto !important;
-        width: 180px !important;
-        min-height: 250px;
-        max-height: 250px;
-        border-radius: 16px;
-        object-fit: cover;
-        object-position: center;
-        z-index: 0;
-        position: relative !important;
-        animation: blink 1.7s infinite ease-in-out;
-      }
-
-      .movie-detail {
-        z-index: 1;
-
-        .title {
-          font-size: 14px;
-          color: #555559;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
-
-          &.ori {
-            color: white;
-            font-size: 16px;
-          }
-
-          &.loading {
-            height: 15px;
-            margin-top: 8px;
-            background-color: #555559;
-            animation: blink 1.3s infinite ease-in-out;
-            width: 75%;
-            border-radius: 6px;
-
-            &.ori {
-              height: 18px;
-            }
-          }
-        }
-      }
-    }
-
     &:hover {
       .custom-button-flickity {
         opacity: 1;
