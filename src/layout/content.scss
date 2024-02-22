@@ -2,6 +2,9 @@
   grid-area: main;
   overflow: hidden;
 
+  display: flex;
+  flex-direction: column;
+
   // @media screen and (min-width: 1200px) {
   //   max-width: 80%;
   // }

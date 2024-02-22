@@ -34,10 +34,10 @@ export default function HomeView() {
   return isLoading ? (
     <Loader />
   ) : (
-    <Flex direction="column" style={{ overflow: "hidden" }}>
+    <>
       <HeaderHome randomMovie={randomMovie} />
 
       <ContentList />
-    </Flex>
+    </>
   );
 }
