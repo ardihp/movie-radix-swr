@@ -1,20 +1,12 @@
 "use client";
 
 import React from "react";
-import { Box, Flex, Heading, Separator, Text } from "@radix-ui/themes";
+import { Box, Flex, Heading, Text } from "@radix-ui/themes";
 import MenuSidebar from "./components/menu-sidebar";
-import {
-  CameraIcon,
-  CubeIcon,
-  DesktopIcon,
-  GlobeIcon,
-  PersonIcon,
-  PieChartIcon,
-  ResumeIcon,
-  RocketIcon,
-} from "@radix-ui/react-icons";
+import { DesktopIcon, GlobeIcon, PieChartIcon } from "@radix-ui/react-icons";
 import "./sidebar.scss";
 import { usePathname } from "next/navigation";
+import { IconDeviceTvOld } from "@tabler/icons-react";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -43,7 +35,7 @@ export default function Sidebar() {
           text="Browse"
         />
         <MenuSidebar
-          icon={<RocketIcon width="20px" height="20px" />}
+          icon={<IconDeviceTvOld size={20} />}
           active={pathname.includes("movie-list")}
           href="/movie-list"
           text="Movies"
