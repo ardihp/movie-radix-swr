@@ -10,7 +10,7 @@ import Loader from "@/layout/loader";
 
 export default function MovieListView() {
   const { getTrendingMovies } = useMovie();
-  const { trendingMovies, isLoading } = getTrendingMovies();
+  const { trendingMovies, isLoading } = getTrendingMovies("?page=1");
 
   return isLoading ? (
     <Loader />
