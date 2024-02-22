@@ -92,9 +92,13 @@
       border-radius: 4px;
       position: absolute;
       height: 100%;
-      width: 24px;
+      width: 36px;
       z-index: 2;
       opacity: 0;
+
+      @media screen and (max-width: 1440px) {
+        width: 24px;
+      }
 
       &.prev {
         left: 0;
@@ -114,6 +118,22 @@
 
       &:focus {
         box-shadow: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    min-height: 310px;
+
+    .section-list {
+      .item-list {
+        width: 150px;
+
+        .movie-image {
+          width: 150px !important;
+          min-height: 200px;
+          max-height: 200px;
+        }
       }
     }
   }

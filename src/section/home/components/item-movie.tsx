@@ -47,7 +47,7 @@ export default function ItemMovie({ item, viewStyle }: ItemMovieProps) {
           sideOffset={12}
         >
           <Flex direction="column" className="detail-content">
-            <Text className="text">{item?.overview}</Text>
+            <Text className="text overview">{item?.overview}</Text>
 
             <Flex direction="row" className="vote">
               <IconStarFilled width="18px" height="18px" />

@@ -18,7 +18,6 @@ interface ListMovieProps {
 const settings = {
   dots: false,
   infinite: true,
-  lazyLoad: true,
   slidesToShow: 7,
   arrows: false,
   centerMode: true,
@@ -26,13 +25,14 @@ const settings = {
   centerPadding: "50px",
   responsive: [
     {
-      breakpoint: 1660,
+      breakpoint: 1720,
       settings: {
         slidesToShow: 6,
+        centerPadding: "-20px",
       },
     },
     {
-      breakpoint: 1560,
+      breakpoint: 1536,
       settings: {
         slidesToShow: 5,
         centerPadding: "30px",
@@ -48,36 +48,56 @@ const settings = {
     {
       breakpoint: 1200,
       settings: {
-        slidesToShow: 5,
-        centerPadding: "30px",
+        slidesToShow: 6,
+        centerPadding: "0",
       },
     },
     {
       breakpoint: 1100,
       settings: {
-        slidesToShow: 4,
-        centerPadding: "60px",
+        slidesToShow: 5,
+        centerPadding: "30px",
       },
     },
     {
       breakpoint: 991,
       settings: {
-        slidesToShow: 3,
-        centerPadding: "120px",
+        slidesToShow: 4,
+        centerPadding: "80px",
       },
     },
     {
       breakpoint: 896,
       settings: {
-        slidesToShow: 3,
-        centerPadding: "40px",
+        slidesToShow: 4,
+        centerPadding: "25px",
       },
     },
     {
-      breakpoint: 740,
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        centerPadding: "80px",
+      },
+    },
+    {
+      breakpoint: 600,
       settings: {
         slidesToShow: 2,
-        centerPadding: "40px",
+        centerPadding: "10px",
+      },
+    },
+    {
+      breakpoint: 425,
+      settings: {
+        slidesToShow: 1,
+        centerPadding: "75px",
+      },
+    },
+    {
+      breakpoint: 375,
+      settings: {
+        slidesToShow: 1,
       },
     },
   ],

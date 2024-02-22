@@ -43,15 +43,7 @@ export default function HeaderHome({ randomMovie }: HeaderHomeProps) {
         </Flex>
 
         <Flex direction="row" gap="4">
-          <Button
-            className="btn-primary"
-            style={{
-              width: 175,
-              height: 55,
-              fontSize: 16,
-              borderRadius: 16,
-            }}
-          >
+          <Button className="btn-primary btn-header">
             <Flex direction="row" align="center" gap="2">
               <Flex
                 align="center"
@@ -69,15 +61,7 @@ export default function HeaderHome({ randomMovie }: HeaderHomeProps) {
           </Button>
 
           <Link href={`/movie/detail/${randomMovie.id}`}>
-            <Button
-              className="btn-default"
-              style={{
-                width: 165,
-                height: 55,
-                fontSize: 16,
-                borderRadius: 16,
-              }}
-            >
+            <Button className="btn-default btn-header">
               <Flex direction="row" align="center" gap="2">
                 <IconInfoCircleFilled height="16px" width="16px" />
                 <Text>More Detail</Text>
