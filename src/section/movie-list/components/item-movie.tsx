@@ -1,6 +1,6 @@
 import { HOST_DOMAIN_ASSETS } from "@/config-global";
 import { MovieDetail } from "@/types/movie";
-import { Box, Flex, Text } from "@radix-ui/themes";
+import { Flex, Text } from "@radix-ui/themes";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import Image from "next/image";
 import React, { useRef } from "react";
@@ -29,55 +29,52 @@ export default function ItemMovie({
   return (
     <HoverCard.Root openDelay={150} closeDelay={0}>
       <HoverCard.Trigger asChild>
-        <Link href={`/movie/detail/${item.id}`}>
+        <Link href={`/movie/detail/${item.id}`} className="item-link" passHref>
           <motion.div
+            ref={ref}
             initial={{ y: 25, opacity: 0 }}
             animate={{ y: isInView ? 0 : 25, opacity: isInView ? 1 : 0 }}
             transition={{ type: "spring", delay: 0.15 }}
+            className="item-list"
+            style={viewStyle}
           >
-            <Flex
-              ref={ref}
-              direction="column"
-              className="item-list"
-              style={viewStyle}
+            <motion.div
+              className="movie-image-skeleton"
+              initial={{ display: "block" }}
+              animate={{ display: "none" }}
+              transition={{ type: "spring", delay: 1.5 }}
+            />
+            <motion.div
+              className="movie-image-wrapper"
+              initial={{ display: "none" }}
+              animate={{ display: "block" }}
+              transition={{ type: "spring", delay: 1.5 }}
             >
-              <motion.div
-                className="movie-image"
-                initial={{ display: "block" }}
-                animate={{ display: "none" }}
-                transition={{ type: "spring", delay: 1.5 }}
-              />
-              <motion.div
-                className="movie-image"
-                initial={{ display: "none" }}
-                animate={{ display: "block" }}
-                transition={{ type: "spring", delay: 1.5 }}
-              >
-                {isInView && (
-                  <Image
-                    src={HOST_DOMAIN_ASSETS + item.poster_path}
-                    className="movie-image"
-                    fill
-                    sizes="100%"
-                    alt={item.title}
-                    style={{ opacity: 0 }}
-                    onLoad={(e) => {
-                      e.currentTarget.style.opacity = "1";
-                      e.currentTarget.style.transition = "all .5s ease-in";
-                    }}
-                    loading="lazy"
-                  />
-                )}
-              </motion.div>
+              {isInView && (
+                <Image
+                  src={HOST_DOMAIN_ASSETS + item.poster_path}
+                  className="movie-image"
+                  fill
+                  sizes="300px"
+                  alt={item.title}
+                  style={{ opacity: 0 }}
+                  onLoad={(e) => {
+                    e.currentTarget.style.opacity = "1";
+                    e.currentTarget.style.transition = "all .5s ease-in";
+                  }}
+                  loading="lazy"
+                />
+              )}
+            </motion.div>
 
-              <Flex direction="column" className="movie-detail">
-                <Text className="title ori">{item?.original_title}</Text>
-                <Text className="title">{item.title}</Text>
-              </Flex>
+            <Flex direction="column" className="movie-detail">
+              <Text className="title ori">{item?.original_title}</Text>
+              <Text className="title">{item.title}</Text>
             </Flex>
           </motion.div>
         </Link>
       </HoverCard.Trigger>
+
       <HoverCard.Portal>
         <HoverCard.Content
           data-site="top"

@@ -5,59 +5,90 @@ a {
   all: unset;
 }
 
-.item-list {
-  height: fit-content;
-  gap: 12px;
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
+.item-link {
+  max-width: 210px;
+  margin: 0 auto;
+  display: block;
 
-  &.loading {
-    .movie-image {
-      width: 180px !important;
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    overflow: hidden;
+
+    .movie-image-skeleton {
+      width: auto;
+      height: 250px;
+      border-radius: 16px;
       animation: blink 1.3s infinite ease-in-out;
+    }
+
+    .movie-image-wrapper {
+      min-height: 250px;
+      border-radius: 16px;
       position: relative !important;
+      animation: blink 1.7s infinite ease-in-out;
+      overflow: hidden;
+
+      .movie-image {
+        object-fit: cover;
+        object-position: center top;
+      }
+    }
+
+    .movie-detail {
+      z-index: 1;
+
+      .title {
+        font-size: 14px;
+        color: #555559;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &.ori {
+          color: white;
+          font-size: 16px;
+        }
+
+        &.loading {
+          height: 15px;
+          margin-top: 8px;
+          background-color: #555559;
+          animation: blink 1.3s infinite ease-in-out;
+          width: 75%;
+          border-radius: 6px;
+
+          &.ori {
+            height: 18px;
+          }
+        }
+      }
     }
   }
 
-  .movie-image {
-    height: auto !important;
-    width: 100% !important;
-    min-height: 250px;
-    max-height: 250px;
-    border-radius: 16px;
-    object-fit: cover;
-    object-position: center;
-    z-index: 0;
-    position: relative !important;
-    animation: blink 1.7s infinite ease-in-out;
-  }
+  @media screen and (max-width: 1200px) {
+    max-width: 180px;
 
-  .movie-detail {
-    z-index: 1;
+    .item-list {
+      gap: 8px;
 
-    .title {
-      font-size: 14px;
-      color: #555559;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-
-      &.ori {
-        color: white;
-        font-size: 16px;
+      .movie-image-skeleton {
+        height: 225px;
       }
 
-      &.loading {
-        height: 15px;
-        margin-top: 8px;
-        background-color: #555559;
-        animation: blink 1.3s infinite ease-in-out;
-        width: 75%;
-        border-radius: 6px;
+      .movie-image-wrapper {
+        min-height: 225px;
+      }
 
-        &.ori {
-          height: 18px;
+      .movie-detail {
+        .title {
+          font-size: 12px;
+
+          &.ori {
+            font-size: 14px;
+          }
         }
       }
     }
